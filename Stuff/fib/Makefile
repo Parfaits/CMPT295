@@ -1,18 +1,18 @@
-all: killme
+all: main
 
 
-killme: killme.o fib1.o
-	gcc -o killme fib1.o killme.o
+main: main.o fib1.o
+	gcc -o main fib1.o main.o
 
-killme.o:	killme.s
-	gcc -c killme.s
+main.o:	main.s
+	gcc -c main.s
 
 fib1.o:	fib1.s
 	gcc -g -c fib1.s
 
-killme.s:	killme.c
-	gcc -O2 -S killme.c
+main.s:	main.c
+	gcc -O2 -S main.c
 
 
 clean:	
-	rm -f killme *.o killme.s
+	rm -f main *.o main.s
